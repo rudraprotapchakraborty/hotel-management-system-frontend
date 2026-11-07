@@ -6,7 +6,7 @@ export const SESSION_EXPIRED_EVENT = "hd:session-expired";
 
 const api = axios.create({
   // Development goes through the Vite proxy; production talks to the deployed API unless VITE_API_URL says otherwise
-  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "/api" : "https://hotel-management-server-one.vercel.app/api"),
+  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "/api" : "https://hotel-management-system-backend-two.vercel.app/api"),
   timeout: 20_000,
 });
 

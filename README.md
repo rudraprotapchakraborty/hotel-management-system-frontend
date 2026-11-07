@@ -2,6 +2,8 @@
 
 A hotel dining and membership system. Browse the hotel menu, preview dishes before they launch, order in a few taps, review what you ate and join a plan for members-only perks. The app is branded **Hotel Dine**.
 
+Live: [hotel-management-system-frontend-lac.vercel.app](https://hotel-management-system-frontend-lac.vercel.app/) (use a test account on the sign-in page)
+
 Backend repository: [hotel-management-system-backend](https://github.com/rudraprotapchakraborty/hotel-management-system-backend)
 
 ## Features
@@ -41,7 +43,7 @@ In development the dev server proxies `/api` to `http://127.0.0.1:5000`. To try 
 | --- | --- |
 | `GOOGLE_CLIENT_ID` | Public Google OAuth client id. The button is hidden when it is empty. |
 | `STRIPE_PUBLISHABLE_KEY` | Public Stripe key (`pk_test_...`). Card payments are hidden when it is empty. |
-| `VITE_API_URL` | Optional override of the API origin including `/api`. Production defaults to the deployed backend in `src/lib/api.js`. |
+| `VITE_API_URL` | Optional override of the API origin including `/api`. Production defaults to `https://hotel-management-system-backend-two.vercel.app/api`. |
 
 ## Deploying
 
