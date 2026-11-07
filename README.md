@@ -1,10 +1,25 @@
-# Hotel Management System · Web app
+<div align="center">
 
-A hotel dining and membership system. Browse the hotel menu, preview dishes before they launch, order in a few taps, review what you ate and join a plan for members-only perks. The app is branded **Hotel Dine**.
+# 🍽️ Hotel Management System
 
-Live: [hotel-management-system-frontend-lac.vercel.app](https://hotel-management-system-frontend-lac.vercel.app/) (use a test account on the sign-in page)
+**A hotel dining and membership system: browse the menu, order with card or SSLCommerz, review dishes and join a plan.**
 
-Backend repository: [hotel-management-system-backend](https://github.com/rudraprotapchakraborty/hotel-management-system-backend)
+[**Live demo**](https://hotel-management-system-frontend-lac.vercel.app/) · [Backend API](https://github.com/rudraprotapchakraborty/hotel-management-system-backend) · [Portfolio](https://rudraprotapchakraborty.com/projects)
+
+![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61dafb) ![Vite](https://img.shields.io/badge/Vite-646cff?style=for-the-badge&logo=vite&logoColor=ffffff) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0f172a?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8) ![Stripe](https://img.shields.io/badge/Stripe-635bff?style=for-the-badge&logo=stripe&logoColor=ffffff) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=ffffff)
+
+<a href="https://hotel-management-system-frontend-lac.vercel.app/"><img src="https://i.ibb.co/gMQ02TjJ/hotel-management-system.webp" alt="Hotel Management System: home page" width="880"></a>
+
+</div>
+
+> The web app of **Hotel Dine**.
+>
+> - Menu with search and filters, upcoming dishes, reviews and likes
+> - Cart and checkout with Stripe cards or the SSLCommerz sandbox, verified on the server
+> - Four membership tiers that unlock features
+> - Member dashboard and an admin area for the menu, requests, members and payments
+
+A hotel dining system where guests browse the menu with search, type, meal-time and price filters, preview upcoming dishes, read and write star reviews, ask for a meal to be served and order through a cart. Checkout runs on the server: prices always come from the database, and payment is taken with Stripe cards or the SSLCommerz sandbox in BDT, then verified with the gateway before the order is marked paid. Memberships (Bronze, Silver, Gold, Platinum) are one-time purchases that raise a guest's tier and unlock voting on upcoming dishes. Members get a dashboard with their cart, orders, reviews and requests, and admins manage the menu, publish upcoming dishes, serve requests, change member tiers and roles, block members and see every payment. Sign-in works with email and password confirmed by a one-time email code, or with Google, with password reset and an account settings page. Shared test accounts for each role make it easy to try, and the interface supports light and dark themes.
 
 ## Features
 
@@ -52,3 +67,11 @@ The project deploys as a static site (Vercel config included, with a rewrite to 
 ## Credits
 
 Sample dish photos come from Wikipedia and Wikimedia Commons under their free licences.
+
+---
+
+<div align="center">
+
+Made by **[Rudra Protap Chakraborty](https://rudraprotapchakraborty.com)** · [Portfolio](https://rudraprotapchakraborty.com) · [GitHub](https://github.com/rudraprotapchakraborty)
+
+</div>
