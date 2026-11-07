@@ -1,10 +1,22 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/public/logo.png" />
+    <title>Hotel Dine | Hotel Management System</title>
+    <meta name="description" content="Browse the hotel menu, preview upcoming dishes, order, review your favorites and join a membership plan." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Management</title>
+    <meta name="theme-color" content="#1b2a41" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script>
+      // Apply the saved theme before the first paint so there is no flash
+      try {
+        var t = localStorage.getItem("hd_theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) document.documentElement.classList.add("dark");
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

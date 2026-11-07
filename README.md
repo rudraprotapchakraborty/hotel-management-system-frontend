@@ -1,93 +1,52 @@
-# Hotel Management System - Client Side
+# Hotel Management System · Web app
 
-## Overview
-This repository contains the client-side implementation of the **Hotel Management System** using React.js. The client allows students and administrators to interact with the system via a user-friendly interface. Students can log in, view meal details, and provide reviews, while administrators can manage meal data, reviews, and student information.
+A hotel dining and membership system. Browse the hotel menu, preview dishes before they launch, order in a few taps, review what you ate and join a plan for members-only perks. The app is branded **Hotel Dine**.
 
----
-
-## Screenshot
-![Hotel Management System](/src/assets/screenshot.png)
-
----
+Backend repository: [hotel-management-system-backend](https://github.com/rudraprotapchakraborty/hotel-management-system-backend)
 
 ## Features
-1. **User Authentication**
-   - Students can log in securely.
-   - Persistent authentication using JWT.
 
-2. **Meal Display**
-   - Students can view the list of available meals.
-   - Interactive UI for displaying meal details.
+- Menu with search, type and meal-time filters, price range and sorting. The state lives in the address bar, so every view can be linked or reloaded
+- Upcoming dishes: members on a paid plan can like them to help decide what launches next
+- Dish pages with ingredients, chef, a like button, star reviews (one per member, editable) and a "request this meal" button
+- Cart and checkout: dishes and one membership plan per order. Prices are checked on the server. Pay by card with Stripe (test mode) or with SSLCommerz (sandbox, charged in BDT)
+- Memberships: Bronze is free, Silver, Gold and Platinum are one-time purchases that raise your tier
+- Dashboard for members: overview, cart, orders, reviews and meal requests
+- Admin area: manage the menu (add, edit, publish upcoming dishes, remove), serve meal requests, manage members (tier, role, block, delete) and see every payment
+- Email and password sign-in with a six digit email code, Google sign-in, forgot-password reset
+- Account settings: name, photo, email (confirmed by code), password, sign-in methods, delete account
+- Light and dark mode, responsive down to phones
+- Shared test accounts (Admin and User) on the sign-in page, locked so settings and the sample menu cannot be changed
+- Links from the first version of the site (`/mealDetails/:id`, `/upcomingMeals`, `/dashboard/manageItems` and others) still work
 
-3. **Review Management**
-   - Students can add, edit, and delete reviews.
-   - Reviews are displayed with ratings and comments.
+## Stack
 
-4. **Admin Panel**
-   - Admins can manage meal entries (add, edit, delete).
-   - Admins can view and moderate food reviews.
-   - Admins can manage student data.
+React 19, Vite 8, Tailwind CSS 4, React Router 7, Axios, Stripe Elements, lucide-react.
 
----
+## Run it locally
 
-## Technologies Used
-- **React.js**: Front-end library for building user interfaces.
-- **Axios**: For making API calls to the server.
-- **Tailwind CSS**: For styling the components.
-- **React Router**: For navigation between pages.
-- **JWT (JSON Web Tokens)**: For secure authentication.
+You need the [backend](https://github.com/rudraprotapchakraborty/hotel-management-system-backend) running on port 5000.
 
----
-
-## Dependencies
-Make sure you have the following dependencies installed in your project:
-```json
-"dependencies": {
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-  "react-router-dom": "^6.15.0",
-  "axios": "^1.5.1",
-  "tailwindcss": "^3.4.0",
-  "jwt-decode": "^4.0.0"
-}
+```bash
+npm install
+cp .env.example .env.local   # then fill in GOOGLE_CLIENT_ID and STRIPE_PUBLISHABLE_KEY
+npm run dev                  # http://localhost:3000
 ```
----
 
-## Installation & Setup
-Follow these steps to run the project locally:
+In development the dev server proxies `/api` to `http://127.0.0.1:5000`. To try a card payment use Stripe's test card `4242 4242 4242 4242` with any future date and any CVC.
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/rudraprotapchakraborty/hotel-management-client.git
-   cd hotel-management-client
-   ```
+## Environment
 
-2. **Install dependencies:**
-   ```sh
-   npm install
-   ```
+| Variable | Purpose |
+| --- | --- |
+| `GOOGLE_CLIENT_ID` | Public Google OAuth client id. The button is hidden when it is empty. |
+| `STRIPE_PUBLISHABLE_KEY` | Public Stripe key (`pk_test_...`). Card payments are hidden when it is empty. |
+| `VITE_API_URL` | Optional override of the API origin including `/api`. Production defaults to the deployed backend in `src/lib/api.js`. |
 
-3. **Start the development server:**
-   ```sh
-   npm run dev
-   ```
+## Deploying
 
-4. **Configure the API Base URL:**
-   - Open `.env` file and set your backend API URL:
-     ```sh
-     VITE_API_URL=http://localhost:5000/api
-     ```
+The project deploys as a static site (Vercel config included, with a rewrite to `index.html` for client side routing). Set `GOOGLE_CLIENT_ID` and `STRIPE_PUBLISHABLE_KEY` in the host's environment, and add the site's origin to the Google client's authorized JavaScript origins. The backend's `CLIENT_URL` must list this site's origin.
 
-5. **Access the application:**
-   - Open `http://localhost:5173` in your browser.
+## Credits
 
----
-
-## Live Demo & Resources
-- **Live Project:** [https://hotel-management-25cdc.web.app/](https://hotel-management-25cdc.web.app/)
-- **Backend Repository:** [https://github.com/rudraprotapchakraborty/hotel-management-server](https://github.com/rudraprotapchakraborty/hotel-management-server)
----
-
-### License
-This project is open-source and available under the [MIT License](LICENSE).
-
+Sample dish photos come from Wikipedia and Wikimedia Commons under their free licences.

@@ -1,30 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import {
-  RouterProvider,
-} from "react-router-dom";
-import { router } from './routes/Routes';
-import { ThemeProvider } from './context/ThemeContext';
-import { HelmetProvider } from 'react-helmet-async';
-import AuthProvider from './providers/AuthProvider';
-import {
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { AuthProvider } from "./context/AuthContext";
+import { CartProvider } from "./context/CartContext";
+import "./styles.css";
 
-const queryClient = new QueryClient()
-
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <QueryClientProvider client={queryClient}>
-        <HelmetProvider>
-          <ThemeProvider>
-            <RouterProvider router={router} />
-          </ThemeProvider>
-        </HelmetProvider>
-      </QueryClientProvider>
-    </AuthProvider>
-  </StrictMode>,
-)
+    <BrowserRouter>
+      <AuthProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </AuthProvider>
+    </BrowserRouter>
+  </StrictMode>
+);
